@@ -115,8 +115,9 @@ export default function GuestlistPage() {
 
         {!generatedPass ? (
           /* Form Section */
-          <div className="glass-panel rounded-3xl p-6 sm:p-10 border border-white/15 shadow-2xl">
-            <form onSubmit={handleGenerate} className="space-y-8">
+          <div className="glass-panel rounded-2xl sm:rounded-3xl p-4 sm:p-10 border border-white/15 shadow-2xl">
+            <form onSubmit={handleGenerate} className="space-y-6 sm:space-y-8">
+
               
               {/* Step 1: Select Event */}
               <div>
@@ -286,20 +287,21 @@ export default function GuestlistPage() {
             </div>
 
             {/* Futuristic Holographic Ticket Pass Card */}
-            <div className="glass-panel border-2 border-cyber-cyan/50 rounded-3xl p-6 sm:p-8 relative overflow-hidden shadow-[0_0_40px_rgba(0,240,255,0.2)] text-left max-w-2xl mx-auto">
+            <div className="glass-panel border-2 border-cyber-cyan/50 rounded-2xl sm:rounded-3xl p-4 sm:p-8 relative overflow-hidden shadow-[0_0_40px_rgba(0,240,255,0.2)] text-left max-w-2xl mx-auto">
               <div className="absolute top-0 left-0 right-0 h-2 bg-gradient-to-r from-cyber-cyan via-cyber-pink to-cyber-purple"></div>
 
-              <div className="flex flex-col sm:flex-row items-center gap-8">
+              <div className="flex flex-col sm:flex-row items-center gap-6 sm:gap-8">
                 
                 {/* QR Code */}
-                <div className="bg-black p-3 rounded-2xl border border-cyber-cyan/40 shrink-0 shadow-lg">
+                <div className="bg-black p-2.5 sm:p-3 rounded-2xl border border-cyber-cyan/40 shrink-0 shadow-lg">
                   {qrCodeDataUrl && (
-                    <img src={qrCodeDataUrl} alt="Entry Pass QR" className="w-44 h-44 rounded-xl" />
+                    <img src={qrCodeDataUrl} alt="Entry Pass QR" className="w-36 h-36 sm:w-44 sm:h-44 rounded-xl" />
                   )}
-                  <div className="text-[11px] font-mono text-center text-cyber-cyan mt-2 font-bold">
+                  <div className="text-[10px] sm:text-[11px] font-mono text-center text-cyber-cyan mt-1.5 sm:mt-2 font-bold">
                     {generatedPass.ticketId}
                   </div>
                 </div>
+
 
                 {/* Ticket Metadata */}
                 <div className="space-y-3 flex-1 w-full">

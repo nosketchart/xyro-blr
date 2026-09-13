@@ -8,7 +8,18 @@
   }
 }
 
+/* Hide scrollbar for Chrome, Safari and Opera */
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+/* Hide scrollbar for IE, Edge and Firefox */
+.no-scrollbar {
+  -ms-overflow-style: none;  /* IE and Edge */
+  scrollbar-width: none;  /* Firefox */
+}
+
 /* Glassmorphism Styles */
+
 .glass-panel {
   background: rgba(18, 18, 28, 0.75);
   backdrop-filter: blur(16px);

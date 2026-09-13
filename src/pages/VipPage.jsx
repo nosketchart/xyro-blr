@@ -59,9 +59,9 @@ export default function VipPage() {
           {VIP_PACKAGES.map((pkg) => (
             <div
               key={pkg.id}
-              className={`glass-panel rounded-3xl p-8 border flex flex-col justify-between transition-all duration-300 relative ${
+              className={`glass-panel rounded-3xl p-6 sm:p-8 border flex flex-col justify-between transition-all duration-300 relative ${
                 pkg.popular
-                  ? 'border-cyber-pink shadow-[0_0_40px_rgba(255,42,133,0.25)] bg-cyber-card/90 scale-105 z-10'
+                  ? 'border-cyber-pink shadow-[0_0_40px_rgba(255,42,133,0.25)] bg-cyber-card/90 md:scale-105 z-10'
                   : 'border-white/10 hover:border-white/20'
               }`}
             >

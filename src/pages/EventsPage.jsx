@@ -60,34 +60,34 @@ export default function EventsPage({ onBookEvent }) {
             <span>Bangalore Event Calendar 2026</span>
           </div>
 
-          <h1 className="text-4xl sm:text-6xl md:text-7xl font-black font-syne text-white tracking-tight">
+          <h1 className="text-3xl sm:text-6xl md:text-7xl font-black font-syne text-white tracking-tight">
             UPCOMING <span className="text-gradient-cyan">EXPERIENCES</span>
           </h1>
-          <p className="text-slate-300 text-sm sm:text-base max-w-2xl mx-auto mt-3">
+          <p className="text-slate-300 text-xs sm:text-base max-w-2xl mx-auto mt-2 sm:mt-3">
             Secure your passes and free guestlist entries before slots fill up. Every event features state-of-the-art acoustics and curated electronic talent.
           </p>
 
           {/* Search & Filter Controls */}
-          <div className="max-w-3xl mx-auto mt-10 space-y-4">
+          <div className="max-w-3xl mx-auto mt-8 sm:mt-10 space-y-4">
             {/* Search bar */}
             <div className="relative">
               <Search className="absolute left-4 top-3.5 w-4 h-4 text-slate-400" />
               <input
                 type="text"
-                placeholder="Search by event, artist (e.g. S1rcar), genre (Techno, Afro House), or venue..."
+                placeholder="Search by event, artist (e.g. S1rcar), genre, or venue..."
                 value={searchTerm}
                 onChange={(e) => setSearchTerm(e.target.value)}
                 className="w-full bg-cyber-card/80 backdrop-blur-xl border border-white/15 rounded-2xl pl-12 pr-4 py-3.5 text-xs sm:text-sm text-white placeholder-slate-400 focus:outline-none focus:border-cyber-cyan shadow-xl"
               />
             </div>
 
-            {/* Category Filter Pills */}
-            <div className="flex flex-wrap items-center justify-center gap-2">
+            {/* Category Filter Pills (swipeable horizontally on mobile) */}
+            <div className="flex items-center justify-start sm:justify-center gap-2 overflow-x-auto no-scrollbar py-1 px-1">
               {categories.map((cat) => (
                 <button
                   key={cat}
                   onClick={() => setActiveCategory(cat)}
-                  className={`px-4 py-2 rounded-xl text-xs font-bold transition-all ${
+                  className={`px-4 py-2 rounded-xl text-xs font-bold transition-all shrink-0 ${
                     activeCategory === cat
                       ? 'bg-cyber-cyan text-black shadow-lg shadow-cyber-cyan/30'
                       : 'glass-panel text-slate-300 hover:text-white hover:border-white/20'

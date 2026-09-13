@@ -27,20 +27,20 @@ export default function GalleryPage() {
           <span>Visual Archive</span>
         </div>
 
-        <h1 className="text-4xl sm:text-6xl md:text-7xl font-black font-syne text-white tracking-tight">
+        <h1 className="text-3xl sm:text-6xl md:text-7xl font-black font-syne text-white tracking-tight">
           THE VIBE & <span className="text-gradient-pink">AFTERMOVIES</span>
         </h1>
-        <p className="text-slate-300 text-sm sm:text-base max-w-2xl mx-auto mt-3">
+        <p className="text-slate-300 text-xs sm:text-base max-w-2xl mx-auto mt-2 sm:mt-3">
           Relive the energy of Bangalore's most electric dancefloors, sunset horizons, and wildest pool parties.
         </p>
 
         {/* Filter Pills */}
-        <div className="flex flex-wrap items-center justify-center gap-2 mt-8">
+        <div className="flex items-center justify-start sm:justify-center gap-2 mt-6 sm:mt-8 overflow-x-auto no-scrollbar py-1 px-1">
           {filterOptions.map((f) => (
             <button
               key={f}
               onClick={() => setActiveFilter(f)}
-              className={`px-4 py-2 rounded-xl text-xs font-bold transition-all ${
+              className={`px-4 py-2 rounded-xl text-xs font-bold transition-all shrink-0 ${
                 activeFilter === f
                   ? 'bg-cyber-pink text-white shadow-lg shadow-cyber-pink/30'
                   : 'glass-panel text-slate-300 hover:text-white'

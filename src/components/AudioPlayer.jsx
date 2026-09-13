@@ -80,31 +80,32 @@ export default function AudioPlayer({ isGlobalAudioPlaying, toggleGlobalAudio })
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 items-center">
           
           {/* Interactive Player Console */}
-          <div className="lg:col-span-6 glass-panel rounded-3xl p-6 sm:p-8 border border-white/15 relative overflow-hidden shadow-2xl">
+          <div className="lg:col-span-6 glass-panel rounded-2xl sm:rounded-3xl p-4 sm:p-8 border border-white/15 relative overflow-hidden shadow-2xl">
             
             {/* Ambient turntable spin graphic */}
-            <div className="flex items-center justify-between gap-4 mb-6">
-              <div className="flex items-center gap-3">
-                <div className={`w-14 h-14 rounded-full bg-gradient-to-tr from-cyber-cyan to-cyber-pink p-1 ${isPlaying ? 'animate-spin' : ''}`} style={{ animationDuration: '6s' }}>
+            <div className="flex items-center justify-between gap-3 mb-6">
+              <div className="flex items-center gap-3 min-w-0">
+                <div className={`w-12 sm:w-14 h-12 sm:h-14 rounded-full bg-gradient-to-tr from-cyber-cyan to-cyber-pink p-1 shrink-0 ${isPlaying ? 'animate-spin' : ''}`} style={{ animationDuration: '6s' }}>
                   <div className="w-full h-full bg-cyber-darker rounded-full flex items-center justify-center">
-                    <Disc className={`w-7 h-7 text-cyber-cyan ${isPlaying ? 'text-cyber-pink' : ''}`} />
+                    <Disc className={`w-6 sm:w-7 h-6 sm:h-7 text-cyber-cyan ${isPlaying ? 'text-cyber-pink' : ''}`} />
                   </div>
                 </div>
-                <div>
-                  <div className="text-[10px] uppercase font-bold text-cyber-pink tracking-widest">
+                <div className="min-w-0">
+                  <div className="text-[10px] uppercase font-bold text-cyber-pink tracking-widest truncate">
                     Now Playing • {activeTrack.bpm}
                   </div>
-                  <h4 className="text-base sm:text-lg font-bold text-white font-syne truncate max-w-[220px] sm:max-w-xs">
+                  <h4 className="text-sm sm:text-lg font-bold text-white font-syne truncate">
                     {activeTrack.title}
                   </h4>
-                  <div className="text-xs text-slate-400">
+                  <div className="text-xs text-slate-400 truncate">
                     {activeTrack.artist}
                   </div>
                 </div>
               </div>
 
               {/* Animated Equalizer Bars */}
-              <div className="flex items-end gap-1 h-8">
+              <div className="flex items-end gap-1 h-8 shrink-0">
+
                 {[40, 75, 100, 60, 90, 30, 80, 50].map((h, i) => (
                   <span
                     key={i}

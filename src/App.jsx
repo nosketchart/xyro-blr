@@ -2,8 +2,10 @@ import React, { useState, useRef, useEffect } from 'react';
 import { BrowserRouter, Routes, Route, Navigate } from 'react-router-dom';
 import Navbar from './components/Navbar';
 import Footer from './components/Footer';
+import MobileBottomBar from './components/MobileBottomBar';
 import ScrollToTop from './components/ScrollToTop';
 import BookingModal from './components/BookingModal';
+
 
 // Pages
 import HomePage from './pages/HomePage';
@@ -128,7 +130,7 @@ export default function App() {
     <BrowserRouter>
       <ScrollToTop />
 
-      <div className="min-h-screen bg-cyber-darker text-slate-100 flex flex-col selection:bg-cyber-pink selection:text-white">
+      <div className="min-h-screen bg-cyber-darker text-slate-100 flex flex-col selection:bg-cyber-pink selection:text-white pb-16 xl:pb-0">
         {/* Navigation */}
         <Navbar
           isAudioPlaying={isAudioPlaying}
@@ -152,6 +154,9 @@ export default function App() {
 
         {/* Global Footer */}
         <Footer />
+
+        {/* Mobile Sticky Tab Bar */}
+        <MobileBottomBar />
 
         {/* Global Instant QR Ticket Pass Modal */}
         <BookingModal
